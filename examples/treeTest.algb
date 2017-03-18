@@ -1,0 +1,153 @@
+func fillTree( t, level )
+{
+    if level < 4
+    {
+        t.setLeftChild( random( 1, 99 ) );
+        t.setRightChild( random( 1, 99 ) );
+        
+        fillTree( t.getLeftChild( ), level + 1 );
+        fillTree( t.getRightChild( ), level + 1 );
+    }
+}
+
+func preOrder( root, l )
+{
+    l.add( root.getElem( ) );
+    
+    root.setColor( "red" );
+    root.visiting( true );
+    
+    if root.hasLeftChild( )
+    {
+        preOrder( root.getLeftChild( ), l );
+    }
+    if root.hasRightChild( )
+    {
+        preOrder( root.getRightChild( ), l );
+    }
+    
+    root.setColor( "green" );
+    root.visiting( false );
+    
+    print "";
+}
+
+func inOrder( root, l )
+{    
+    if root.hasLeftChild( )
+    {
+        preOrder( root.getLeftChild( ), l );
+    }
+    
+    l.add( root.getElem( ) );
+    
+    root.setColor( "red" );
+    root.visiting( true );   
+    
+    if root.hasRightChild( )
+    {
+        preOrder( root.getRightChild( ), l );
+    }
+    
+    root.setColor( "green" );
+    root.visiting( false );
+    
+    print "";
+}
+
+func postOrder( root, l )
+{    
+    if root.hasLeftChild( )
+    {
+        preOrder( root.getLeftChild( ), l );
+    }   
+    
+    if root.hasRightChild( )
+    {
+        preOrder( root.getRightChild( ), l );
+    }
+    
+    l.add( root.getElem( ) );
+    
+    root.setColor( "red" );
+    root.visiting( true );
+    
+    root.setColor( "green" );
+    root.visiting( false );
+    
+    print "";
+}
+
+main
+{
+    bTree myTree = Tree( 0 );
+    btNode root = myTree.getRoot( );    
+    
+    fillTree( root, root.getLevel( ) );
+    
+    bTree scndTree = Tree( "L" );
+    
+    btNode n = scndTree.getRoot( );
+    n.setLeftChild( "W" );
+    n.setRightChild( "Y" );
+    
+    n = n.getLeftChild( );
+    n.setLeftChild( "D" );
+    n.setRightChild( "O" );
+    
+    n = n.getLeftChild( );
+    n.setLeftChild( "S" );
+    
+    n = n.getLeftChild( );
+    n.setLeftChild( "Q" );
+    n.setRightChild( "X" );
+    
+    n = scndTree.getRoot( );
+    n = n.getLeftChild( );
+    n = n.getRightChild( );
+    n.setLeftChild( "V" );
+    n.setRightChild( "J" );
+    
+    n = n.getLeftChild( );
+    n.setRightChild( "K" );
+    
+    n = scndTree.getRoot( );
+    n = n.getLeftChild( );
+    n = n.getRightChild( );
+    n.setRightChild( "Z" );
+    
+    n = n.getRightChild( );
+    n.setLeftChild( "H" );
+    n.setRightChild( "N" );
+    
+    n = scndTree.getRoot( );
+    n = n.getRightChild( );
+    n.setRightChild( "T" );
+    n.setLeftChild( "B" );
+    
+    n = n.getRightChild( );
+    n.setRightChild( "G" );
+    n.setLeftChild( "U" );
+    
+    n = n.getLeftChild( );
+    n.setLeftChild( "M" );
+    
+    n = scndTree.getRoot( );
+    n = n.getRightChild( );
+    n = n.getRightChild( );
+    n = n.getLeftChild( );
+    n.setLeftChild( "A" );
+    
+    arrayList pre = ArrayList( scndTree.size( ) );
+    preOrder( scndTree.getRoot( ), pre );
+    
+    scndTree.setColor( "default" );
+    
+    arrayList in = ArrayList( scndTree.size( ) );
+    inOrder( scndTree.getRoot( ), in );
+    
+    scndTree.setColor( "default" );
+    
+    arrayList pos = ArrayList( scndTree.size( ) );
+    postOrder( scndTree.getRoot( ), pos );
+}

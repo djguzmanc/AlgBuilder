@@ -1,0 +1,19 @@
+main
+{
+	print "Hello";
+	print "my";
+	print "baby!";
+	print "Hello";
+	print "my";
+	print "baby!";
+	print "A change!";
+	print "Cristian es un marica";
+	
+	//Testing comments
+	
+	/* Testing
+	a
+	block comment */
+	
+	print "Hola";
+}

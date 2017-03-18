@@ -1,0 +1,54 @@
+func stopFunction( )
+{
+    for int i = 0; i < 10; 1
+    {
+        if i > 6
+        {
+            return;
+        }
+    }
+    
+    print "This shouldn't be printed :p";
+}
+
+func pow( a, b )
+{
+    return a ^ b;
+}
+
+main
+{
+    int arr[ 100 ] = randomArray( 100, 999 );
+    bubble( arr );
+    
+    print 4 * 4, 4, 15 + 4, "Hello World :)", pow( 1, 10 );
+    
+    int arr[ 10 ] = randomArray( 10, 100 );
+    int arr2[ 10 ] = randomArray( 10, 50, 100 );
+    
+    int a;
+    double b = 2.2;
+    
+    arrayList list = ArrayList( 10 );
+    
+    graph g = Graph( );
+    gNode n = g.getNode( "a" );
+    
+    bTree myTree = BinaryTree( 0 );
+    
+    btNode root = myTree.getRoot( );
+    
+    linkedList list = LinkedList( );
+    
+    int z;
+    z = 2 * 2;
+    z = z ^ 5;
+    
+    for int i = 0; i < arr.lenght( ); 1
+    {
+        arr[ i ] = random( 0, 500 );
+    }
+}
+
+
+

@@ -1,0 +1,24 @@
+main
+{
+    /* ArrayList demonstration */
+
+    arrayList list = ArrayList( 20 );
+    
+    //list.setAnim( false );
+    
+    print "Is list empty? =", list.isEmpty( );
+    
+    for int i = 0; i < 78; 1
+    {
+        list.add( random( list.size( ) ), i );
+    }
+    
+    print "Is list empty? =", list.isEmpty( );
+    
+    while !list.isEmpty( )
+    {
+        list.remove( random( list.size( ) ) );
+    }
+    
+    print "Is list empty? =", list.isEmpty( );
+}

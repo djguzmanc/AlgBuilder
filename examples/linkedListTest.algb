@@ -1,0 +1,22 @@
+main
+{
+    /* LinkedList demonstration */
+
+    linkedList list = LinkedList( );
+    string e = "e";
+    
+    print list;
+    
+    //list.setAnim( false );
+    
+    for int i = 0; i < 108; 1
+    {
+        list.add( random( list.size( ) + 1 ), e + i );
+    }
+    
+    linkedList a = list;
+    while !list.isEmpty( )
+    {
+        a.remove( random( list.size( ) ) );
+    }
+}

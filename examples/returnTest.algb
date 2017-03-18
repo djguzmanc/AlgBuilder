@@ -1,0 +1,33 @@
+func test( a )
+{
+    for int i = 0; i < 10; 1
+    {
+        if i > 6
+        {
+            return 10;
+        }
+        
+        print i;
+    }
+    
+    print "Fuck!";
+    return "Shit :v";
+}
+
+func fibo( n )
+{
+    if n == 0 || n == 1
+    {
+        return 1;
+    }
+    
+    return fibo( n - 1 ) + fibo( n - 2 );
+}
+
+main
+{
+    any k = test( -10 );
+    print k;
+    
+    print fibo( 5 );
+}

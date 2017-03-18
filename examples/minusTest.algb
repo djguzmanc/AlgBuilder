@@ -1,0 +1,24 @@
+func saludar( )
+{
+    if 5 > 4
+    {
+        return "hola";
+    }
+    else
+    {    
+        return "io";
+    }
+}
+
+main
+{
+    int a = -3;
+    print a;
+    
+    print saludar( );
+
+    for int i = 10; i >= 0; 2 * -1
+    {
+        print i;
+    }
+}

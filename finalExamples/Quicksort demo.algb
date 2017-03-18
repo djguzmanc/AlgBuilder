@@ -1,0 +1,54 @@
+func quicksort( a, p, r )
+{
+    if p < r
+    {
+        int q = partition( a, p, r );
+        
+        quicksort( a, p, q - 1 );
+        quicksort( a, q + 1, r );
+    }
+}
+
+func partition( a, p, r )
+{
+    //adding a green marker at pivot
+    a.putMarkerAt( p, "green", 190 );
+
+    int pivot = a[ p ];
+    int i = p;
+    
+    //adding a follower for i
+    a.addFollower( "i" );       
+    
+    //adding markers for sub array
+    a.putMarkerAt( p + 1, r, "blue", 150 );
+    
+    for int j = p + 1; j <= r; 1
+    {               
+        //adding a follower to j
+        a.addFollower( "j" );
+    
+        if a[ j ] <= pivot
+        {
+            i = i + 1;
+            a.swap( i, j );
+        }
+    }
+    
+    a.swap( p, i );
+    a.clearMarkers( );      //cleaning markers
+    a.dropFollowers( );     //cleaning followers
+    
+    return i;
+}
+
+main
+{
+    /* Quicksort demonstration */
+
+    /* creating a 133-lenght array with random values
+     between 0 and 999. */
+    
+    int myArray[ 130 ] = randomArray( 130, 1000 );
+    quicksort( myArray, 0, myArray.lenght( ) - 1 );
+}

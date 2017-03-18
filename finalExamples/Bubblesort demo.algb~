@@ -1,0 +1,27 @@
+func bubble( array )
+{
+    for int i = 0; i < array.lenght( ); 1
+    {
+        for int j = 0; j < array.lenght( ) - 1; 1
+        {
+            array.putMarkerAt( j, "green", 190 );
+            array.putMarkerAt( j + 1, "green", 190 );
+            
+            array.addFollower( "j" );
+            
+            if array[ j ] < array[ j + 1 ]
+            {
+                array.swap( j, j + 1 );
+            }
+            
+            array.clearMarkers( );
+        }
+        array.dropFollowers( );
+    }
+}
+
+main
+{
+    int arr[ 100 ] = randomArray( 100, 999 );
+    bubble( arr );
+}

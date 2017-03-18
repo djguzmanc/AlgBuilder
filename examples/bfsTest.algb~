@@ -1,0 +1,72 @@
+func bfs( gp, n )
+{
+    arrayList marked = ArrayList( );
+    marked.setAnim( false );            //unable animation
+    
+    arrayList todo = ArrayList( );
+    todo.setAnim( false );              //unable animation
+    
+    marked.add( gp.getNode( n ) );
+    todo.add( gp.getNode( n ) );
+    
+    while todo.size( ) > 0
+    {
+        graphNode here = todo.get( 0 );
+        todo.remove( 0 );
+        
+        here.visiting( true );          //visiting mark
+        here.setColor( "red" );         //changing node color
+        
+        arrayList nbrs = here.getNbrs( );       //geting neigboors
+        
+        for int i = 0; i < nbrs.size( ); 1
+        {
+            graphNode nbr = nbrs.get( i );
+            if !marked.contains( nbr )
+            {
+                nbr.setColor( "green" );    //node being visited
+                todo.add( nbr );
+                marked.add( nbr );
+            }
+        }
+        
+        here.visiting( false );         //visitign unmark
+        here.setColor( "orange" );      //node visited
+    }
+}
+
+main
+{
+    /*
+        A simple demonstration
+        of the BFS algorithm
+        in a 8-node graph
+                               */
+
+    graph g = Graph( );
+    
+    g.makeLink( 1, 2 );
+    g.makeLink( 1, 3 );
+    g.makeLink( 1, 4 );
+    
+    g.makeLink( 2, 5 );
+    
+    g.makeLink( 3, 4 );
+    g.makeLink( 3, 5 );
+    
+    g.makeLink( 4, 5 );
+    
+    g.makeLink( 5, 6 );
+    g.makeLink( 5, 6 );
+    g.makeLink( 5, 6 );
+    
+    g.makeLink( 6, 7 );
+    g.makeLink( 6, 8 );
+    
+    g.makeLink( 7, 8 );
+    g.makeLink( 7, 8 );
+    
+    bfs( g, 7 );
+    
+    print "bfs ended";
+}

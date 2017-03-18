@@ -1,0 +1,232 @@
+func pow( a, b )
+{
+    return a ^ b;
+}
+
+func fibo( n )
+{
+    int a = 1;
+    int b = 1;
+    
+    for int i = 0; i < n; 1
+    {
+        int c = a + b;
+        a = b;
+        b = c;
+    }
+    
+    return a;
+}
+
+func pass( )
+{
+    return 1;
+}
+
+func saludar( )
+{
+    print "Hello! :-)";
+    return 10;
+}
+
+func plusOne( n )
+{
+    //print wer;
+    return n + 1;
+}
+
+func plusTwo( n )
+{
+    int wer = 0;
+    return plusOne( n ) + 1;
+}
+
+func recursiveFibo( n )
+{
+    if n == 0 || n == 1
+    {
+        return 1;
+    }
+    else
+    {
+        return recursiveFibo( n - 1 ) + recursiveFibo( n - 2 );
+    }
+}
+
+func bubble( array )
+{
+    for int i = 0; i < array.lenght( ); 1
+    {
+        for int j = 0; j < array.lenght( ) - 1; 1
+        {
+            array.putMarkerAt( j, "green", 190 );
+            array.putMarkerAt( j + 1, "green", 190 );
+            
+            array.addFollower( "j" );
+            
+            if array[ j ] < array[ j + 1 ]
+            {
+                array.swap( j, j + 1 );
+            }
+            
+            array.clearMarkers( );
+        }
+        array.dropFollowers( );
+    }
+}
+
+func quicksort( a, p, r )
+{
+    if p < r
+    {
+        int q = partition( a, p, r );
+        
+        quicksort( a, p, q - 1 );
+        quicksort( a, q + 1, r );
+    }
+}
+
+func partition( a, p, r )
+{
+    a.putMarkerAt( p, "green", 190 );
+
+    int pivot = a[ p ];
+    int i = p;
+    a.addFollower( "i" );
+    
+    a.putMarkerAt( p + 1, r, "blue", 30 );
+    
+    for int j = p + 1; j <= r; 1
+    {        
+        a.addFollower( "j" );
+        if a[ j ] <= pivot
+        {
+            i = i + 1;
+            a.swap( i, j );
+        }
+    }
+    
+    a.swap( p, i );
+    a.clearMarkers( );
+    a.dropFollowers( );
+    
+    return i;
+}
+
+main
+{
+	//A comment! :p
+	
+	graph g = Graph( );
+	gNode n = g.getNode( "a" );
+	
+	/*
+	
+	int plusOne = 3;
+	
+	print "iterative fibo( 5 ) = ", fibo( 5 );
+	print "recursive fibo( 5 ) = ", recursiveFibo( 5 );
+	
+	print "plus two ( 3 ) =";
+	print plusTwo( 3 );
+	
+	int z;
+	z = 2 * 2;
+	z = z ^ 5;
+	
+	*/
+	
+	int arr[ 10 ] = randomArray( 10, 100 );
+	int arr[ 10 ] = randomArray( 10, 50, 100 );
+	
+	/* testing bubble */
+	int myArray[ 30 ];
+	for int i = 0; i < myArray.lenght( ); 1
+	{
+	    myArray[ i ] = random( 100 );
+	}
+	
+	linkedList list = LinkedList( );
+	
+	bubble( myArray );
+	
+	/* testing quicksort */
+	
+	quicksort( myArray, 0, myArray.lenght( ) - 1 );
+	
+	/* testing functions */
+	
+	int doublepower = pow( 2, 4 ) + saludar( );
+	
+	print "1";
+	
+	print 4 * 4, 4, 4 + 4, "Hello :)", one( ); //testing expression print
+	
+	//Declaring a variable
+	
+	int a;
+	//int pr = a;
+    //double a;
+	a = 5 % 4;
+	int z = 16 ^ ( 1 / 2 );
+	int x = 5;
+	int y = 5;
+	int w = 5;          //testing variable viewers
+	
+	bool k = true && !false;
+	
+	for double v = 1.2; v < 3; 0.1
+	{
+	    print v;
+	}
+	
+	int qw = 25;
+	
+	int arr[ 120 ];
+	
+	for int i = 0; i < arr.lenght( ); 1
+	{
+	    arr[ i ] = random( 0, 500 );
+	}
+	
+	quicksort( arr, 0, arr.lenght( ) - 1 );
+	
+	arr.sort( );
+
+    string helloWorld = "Hello" + " World! " + 23.3;
+    print helloWorld;
+	
+	double t = 2.123;
+	double t2 = 3.123;
+	double t3 = 4.123;
+	
+	double t4 = 1.123;
+	double t5 = 1.123;
+	
+	print "2a =", a * 2;        //testing variable storing
+	
+	a = a + 2 * a;              //testing update variable
+	print a;
+	
+	/* while test */
+	
+	int p = 0;
+	while p < 50             //loop
+	{
+	    print "p =", p;
+	    p = p + 1;
+	    
+	    int per = 0;
+	}
+	
+	while p < 5             //no loop
+	{
+	    print "p =", p;
+	    p = p + 1;
+	}
+	
+	/*  this is a block 
+		and nice
+		comment!        */		
+    print "code end";
+}

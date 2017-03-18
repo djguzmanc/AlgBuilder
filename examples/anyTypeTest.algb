@@ -1,0 +1,34 @@
+main
+{
+    any a = "hola mundo";
+    print a;
+    
+    a = 23 * 2;
+    print a;
+    
+    int b = 10;
+    
+    string d = "e";
+    
+    any arr[ 100 ];
+    print arr;
+    
+    for int i = 0; i < arr.lenght( ); 1
+    {
+        if i % 2 == 0
+        {
+            arr[ i ] = a;
+        }
+        else
+        {
+            if i % 3 == 0
+            {
+                arr[ i ] = b;
+            }
+            else
+            {
+                arr[ i ] = d;
+            }
+        }
+    }
+}

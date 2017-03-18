@@ -1,0 +1,13 @@
+main
+{
+    graph g = Graph( );
+    
+    g.makeLink( 1, 2 );
+    
+    graphNode x = g.getNode( 1 );
+    
+    arrayList a = ArrayList( );
+    a.add( x );
+    
+    print a.contains( x );
+}
