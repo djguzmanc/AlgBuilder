@@ -88,6 +88,7 @@ public class AlgBuilder extends PApplet
 	{
 		size( 1300, 600 );
 		//fullScreen( );
+		//made a change :v
 	}
 	
 	public void setup( )
@@ -745,7 +746,7 @@ public class AlgBuilder extends PApplet
 						println( "Thread terminated correctly." );
 					} catch ( InterruptedException e )
 					{
-						System.err.println( "Thread not killed :( ¡FUCK!, eclipse doesn't like this." );
+						System.err.println( "Thread not killed :( ï¿½FUCK!, eclipse doesn't like this." );
 						e.printStackTrace( );
 					}
 			}
